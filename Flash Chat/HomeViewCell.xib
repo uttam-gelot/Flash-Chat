@@ -19,18 +19,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-sf-9iN">
-                        <rect key="frame" x="0.0" y="0.0" width="49" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-sf-9iN">
+                        <rect key="frame" x="0.0" y="0.0" width="49" height="43.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-6l-RaB">
-                        <rect key="frame" x="53" y="2" width="265" height="39"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-6l-RaB">
+                        <rect key="frame" x="49" y="0.0" width="271" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="271" id="FOK-41-acI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Jsi-6l-RaB" firstAttribute="leading" secondItem="Vcp-sf-9iN" secondAttribute="trailing" id="1Fw-xc-TLQ"/>
+                    <constraint firstItem="Vcp-sf-9iN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NCi-DP-bkJ"/>
+                    <constraint firstAttribute="bottom" secondItem="Vcp-sf-9iN" secondAttribute="bottom" id="NGe-V9-uAh"/>
+                    <constraint firstItem="Vcp-sf-9iN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SiX-1P-Jsb"/>
+                    <constraint firstAttribute="trailing" secondItem="Jsi-6l-RaB" secondAttribute="trailing" id="XhV-wz-fA7"/>
+                    <constraint firstItem="Jsi-6l-RaB" firstAttribute="bottom" secondItem="Vcp-sf-9iN" secondAttribute="bottom" id="fe2-HH-M11"/>
+                    <constraint firstItem="Jsi-6l-RaB" firstAttribute="top" secondItem="Vcp-sf-9iN" secondAttribute="top" id="tFW-bA-gcu"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
