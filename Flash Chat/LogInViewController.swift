@@ -29,23 +29,36 @@ class LogInViewController: UIViewController {
 
         
         //TODO: Log in the user
-        SVProgressHUD.show()
-        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) {
-            (user, error) in
-            if error != nil {
-                print(error!)
-                SVProgressHUD.dismiss()
-                self.performSegue(withIdentifier: "goToChat", sender: self)
-            }
-            else {
-                SVProgressHUD.dismiss()
-                print("log in unsuccessfull")
-            }
+		
+		if emailTextfield.text == "", passwordTextfield.text == "" {
+			
+			let alert = UIAlertController(title: "Warning", message: "Please enter email and password.", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+			
+		}
+        if !Reachability.isConnectedToNetwork(){
+            let alert = UIAlertController(title: "Error", message: "Please Connect To Internet.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        
+        else {
+            SVProgressHUD.show()
+            Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) {
+                (user, error) in
+                if error != nil {
+                    print(error!)
+                    SVProgressHUD.dismiss()
+                    let alert = UIAlertController(title: "Warning", message: "Can not login with this details.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else {
+                    SVProgressHUD.dismiss()
+                    print("log in successfull")
+                    self.performSegue(withIdentifier: "goToChat", sender: self)
+                }
+            }
+            
+        }
     }
-    
-
-
-    
 }  

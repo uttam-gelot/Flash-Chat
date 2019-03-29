@@ -66,7 +66,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = messageArray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "egg")
-        if cell.senderUsername.text == Auth.auth().currentUser?.email as String! {
+        if cell.senderUsername.text == Auth.auth().currentUser?.email {
             cell.avatarImageView.backgroundColor = UIColor.flatMint()
             cell.messageBackground.backgroundColor = UIColor.flatGray()
         }
@@ -138,22 +138,24 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //TODO: Send the message to Firebase and save it in our database
         print("sendPressed..")
-        sendButton.isEnabled = false
-        let messageDB = Database.database().reference().child("Messages")
-        let messageDictionary = ["sender" : Auth.auth().currentUser?.email, "messageBody" : messageTextfield.text!]
-        print(messageDictionary)
-        messageDB.childByAutoId().setValue(messageDictionary) {
-            (error, reference) in
-            if error != nil {
-                print("\(error!)")
-            }
-            else {
-                print("message saved successfully..!!")
-                self.sendButton.isEnabled = true
-                self.messageTextfield.text = ""
-            }
-        }
-        
+		
+		if messageTextfield.text != "" {
+			sendButton.isEnabled = false
+			let messageDB = Database.database().reference().child("Messages")
+			let messageDictionary = ["sender" : Auth.auth().currentUser?.email, "messageBody" : messageTextfield.text!]
+			print(messageDictionary)
+			messageDB.childByAutoId().setValue(messageDictionary) {
+				(error, reference) in
+				if error != nil {
+					print("\(error!)")
+				}
+				else {
+					print("message saved successfully..!!")
+					self.sendButton.isEnabled = true
+					self.messageTextfield.text = ""
+				}
+			}
+		}
     }
     
     //TODO: Create the retrieveMessages method here:
