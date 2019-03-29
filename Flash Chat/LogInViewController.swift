@@ -31,12 +31,11 @@ class LogInViewController: UIViewController {
         //TODO: Log in the user
 		
 		if emailTextfield.text == "", passwordTextfield.text == "" {
-			
 			let alert = UIAlertController(title: "Warning", message: "Please enter email and password.", preferredStyle: .alert)
 			alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-			
+			self.present(alert, animated: true, completion: nil)
 		}
-        if !Reachability.isConnectedToNetwork(){
+        else if !Reachability.isConnectedToNetwork(){
             let alert = UIAlertController(title: "Error", message: "Please Connect To Internet.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
