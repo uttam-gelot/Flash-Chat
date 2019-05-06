@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1I-xB-PqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235.19999999999999" y="10.794602698650676"/>
+            <point key="canvasLocation" x="294" y="10"/>
         </scene>
         <!--Register-->
         <scene sceneID="D59-Lz-QjT">
@@ -243,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="1086.4000000000001" y="-416.49175412293857"/>
         </scene>
-        <!--Flash Chat-->
+        <!--Pearl-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController storyboardIdentifier="chatVC" id="vXZ-lx-hvc" customClass="ChatViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
@@ -313,7 +313,7 @@
                             <constraint firstAttribute="trailing" secondItem="7eI-kw-TVm" secondAttribute="trailing" id="z26-fa-Hmy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Flash Chat" id="OGj-fw-WBv">
+                    <navigationItem key="navigationItem" title="Pearl" id="OGj-fw-WBv">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="mz9-8w-6zi">
                             <connections>
                                 <action selector="logOutPressed:" destination="vXZ-lx-hvc" id="AiZ-zI-Rgo"/>

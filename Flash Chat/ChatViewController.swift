@@ -3,7 +3,6 @@
 //  Flash Chat
 //
 //  Created by Uttam mali.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
 //
 
 import UIKit
